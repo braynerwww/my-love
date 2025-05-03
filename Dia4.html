@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lo que más me gustaba de ti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3d2a1d;
+            --secondary-color: #d2a679;
+            --bg-color: #fdf6e3;
+            --card-bg: #fffaf0;
+            --accent-color: #b27b56;
+            --text-color: #262626;
+            --border-radius: 15px;
+            --shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .audio-container {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .audio-container audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .caption {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2a679' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .carta {
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        .carta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+
+        .carta::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        h2 {
+            margin: 35px 0 20px;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.08);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            text-align: justify;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-color);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-card {
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid var(--secondary-color);
+            background-color: rgba(210, 166, 121, 0.07);
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateX(5px);
+            background-color: rgba(210, 166, 121, 0.12);
+        }
+
+        .feature-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-title i {
+            margin-right: 12px;
+            opacity: 0.8;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .introduction {
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--text-color);
+            border-bottom: 1px solid rgba(210, 166, 121, 0.3);
+            padding-bottom: 20px;
+        }
+
+        .conclusion {
+            margin-top: 40px;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            font-weight: 500;
+            color: var(--text-color);
+            border-top: 1px solid rgba(210, 166, 121, 0.3);
+            padding-top: 30px;
+        }
+
+        .firma {
+            text-align: right;
+            font-style: italic;
+            margin-top: 40px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 32px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .volver {
+            background-color: var(--accent-color);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .corazon {
+            color: #e25555;
+            display: inline-block;
+            animation: latido 1.5s infinite;
+            margin: 0 3px;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .carta {
+                padding: 25px;
+                margin: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1.15rem;
+                line-height: 1.7;
+            }
+
+            .feature-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carta {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1.05rem;
+                text-align: left;
+                line-height: 1.6;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="audio-container">
+            <audio id="audioEspecial" controls>
+                <source src="fotos/nikole/Audio/2.mp4" type="audio/mp4">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div class="caption">Escucha lo que más me gustaba de ti mientras lees.</div>
+        </div>
+        <div class="carta">
+            <h1>Lo que más me gustaba de ti</h1>
+            
+            <p class="introduction">Siempre creí que las personas entran a nuestras vidas por una razón. Contigo, esa razón fue transformar mi mundo entero. Con el tiempo, fuiste revelando facetas de ti que no solo me enamoraron, sino que me inspiraron a ser mejor persona. Estas son las cosas que más amaba de ti, esos detalles que hacían latir mi corazón cada día.</p>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-heart"></i>Tu atención y cariño incondicional</div>
+                <p>Después de conocernos realmente, descubrí cómo te entregabas por completo. Eras increíblemente atenta con cada detalle de mi vida, preguntando por mi día, recordando mis compromisos importantes o simplemente enviando un mensaje para alegrarme la mañana. Tu capacidad para demostrar cariño de forma tan natural, genuina y constante transformaba mis días más difíciles en momentos especiales. No era solo lo que hacías, sino la intención y el amor que ponías en cada pequeño gesto.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-gift"></i>Tus detalles inesperados</div>
+                <p>Esos pequeños regalos que aparecían sin motivo especial, solo porque habías pensado en mí. A veces era una nota dejada en mi mochila, otras veces aquel postre que mencioné me gustaba semanas atrás. Recuerdo especialmente aquella vez que coleccionaste boletos de cine de todas nuestras citas para crear un collage en nuestro aniversario. Tu creatividad para sorprenderme me dejaba sin palabras. Cada detalle, por pequeño que fuera, llevaba impreso tu sello personal, esa forma única que tenías de decirme "estás en mis pensamientos".</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-smile"></i>Tu sonrisa luminosa</div>
+                <p>Esa sonrisa hermosa que me cautivaba desde el primer instante que te veía cada día. La forma en que iluminaba toda la habitación y hacía que todos a tu alrededor quisieran sonreír también. Cuando sonreías, todo parecía estar bien con el mundo. Era como si el tiempo se detuviera y solo existiéramos tú, yo y esa expresión que transformaba tu rostro y me transportaba a un lugar donde no existían problemas. Tu sonrisa sincera era mi refugio en los días grises, mi motivación cuando faltaban fuerzas.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-eye"></i>Tus ojos expresivos</div>
+                <p>Esos ojitos café que al mirarlos encontraba mi lugar feliz, mi lugar seguro. La profundidad y calidez en ellos era indescriptible. Siempre decían la verdad, incluso cuando tus palabras intentaban ocultar algo. Me encantaba perderme en tu mirada y descubrir un universo entero de emociones. Y esas pestañas hermosas que cuidas con tanto esmero, cada día se veían más espectaculares, enmarcando perfectamente las ventanas de tu alma. La forma en que me mirabas, como si yo fuera lo único importante en tu vida, es algo que nunca podré olvidar.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-kiss"></i>Tus mejillas adorables</div>
+                <p>Esos cachetes lindos, perfectos para besarlos y hasta morderlos suavemente. Se sonrojaban con mis cumplidos y se elevaban cuando sonreías. La suavidad de tu piel, el calor que emanaba cuando te abrazaba. Me encantaba acariciarlos o simplemente contemplarlos cuando estabas concentrada en algo. Y cuando reías fuerte, cómo se marcaban ligeramente y le daban a tu rostro ese toque de inocencia y alegría que era imposible no adorar. Besarlos se convirtió en mi ritual favorito para empezar y terminar nuestros días juntos.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-seedling"></i>Tu sencillez y humildad</div>
+                <p>Amo tanto la sencillez que te caracteriza, esa autenticidad que hace que todos se sientan cómodos a tu lado. Nunca pretendías ser alguien más ni buscabas impresionar a nadie. Tu humildad brillaba especialmente cuando recibías elogios por tus logros, siempre reconociendo a quienes te habían ayudado en el camino. A pesar de tus capacidades y talentos, siempre mantenías los pies en la tierra. Esta cualidad te hacía única en un mundo donde muchos construyen fachadas. Contigo todo era real, todo era genuino, y eso me hacía sentir que podía ser yo mismo sin temor a ser juzgado.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-star"></i>Tus grandes sueños y ambiciones</div>
+                <p>Los grandes sueños a los cuales aspiras me inspiraban cada día. Admiraba cómo visualizabas tu futuro con tanta claridad y determinación, desde aquella carrera universitaria que tanto deseabas hasta esos proyectos personales que te ilusionaban. La pasión con la que hablabas de tus metas contagiaba a todos a tu alrededor. Me encantaba escucharte hablar sobre cómo querías impactar positivamente en la vida de los demás, cómo planeabas cada paso para alcanzar esos sueños aparentemente imposibles. Nunca dejabas que los obstáculos te detuvieran; al contrario, los convertías en escalones para seguir creciendo.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-title"><i class="fas fa-rocket"></i>Tu mentalidad de crecimiento</div>
+                <p>Eres la mujer del proceso, la que entiende que los logros valiosos requieren tiempo y esfuerzo. Admiraba profundamente cómo abordabas cada desafío como una oportunidad para aprender y crecer. Nunca te conformabas con lo que ya sabías, siempre buscabas expandir tus conocimientos y habilidades. Y lo más especial era cómo extendías esa mentalidad hacia los demás, ayudándolos a crecer también. Conmigo lo hiciste: me impulsaste a superar mis propios límites, a creer en mis capacidades cuando yo dudaba. Tenías ese don especial para sumar, nunca restar; para construir, nunca destruir. A tu lado, sentía que podía conquistar el mundo entero.</p>
+            </div>
+            
+            <p class="conclusion">Cada una de estas cualidades, como piezas de un rompecabezas perfecto, formaban a la persona extraordinaria que eres. No era solo tu belleza exterior la que me cautivaba, sino la belleza de tu alma que se manifestaba en cada acción, en cada palabra, en cada mirada. Contigo aprendí que el amor verdadero va más allá de lo superficial; es admiración, respeto y gratitud por quien es el otro en su esencia más pura. <span class="corazon"><i class="fas fa-heart"></i></span> Gracias por permitirme descubrir estas maravillas en ti y por inspirarme a ser mejor cada día.</p>
+            
+            <p class="firma">Con amor eterno y admiración infinita.</p>
+            
+            <a href="javascript:history.back()" class="btn volver fade-in">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Script para animación de aparición al scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Auto reproducir el audio después de interacción
+            document.body.addEventListener('click', function() {
+                const audio = document.getElementById('audioEspecial');
+                if (audio && audio.paused) {
+                    audio.play().catch(e => console.log('Reproducción automática bloqueada por el navegador.'));
+                }
+            }, {once: true});
+
+            // Cargar fuente de Google
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap';
+            document.head.appendChild(link);
+        });
+    </script>
+</body>
+</html>

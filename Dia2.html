@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gracias por Elegirme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3d2a1d;
+            --secondary-color: #d2a679;
+            --bg-color: #fdf6e3;
+            --card-bg: #fffaf0;
+            --accent-color: #b27b56;
+            --text-color: #262626;
+            --border-radius: 15px;
+            --shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2a679' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .carta {
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        .carta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+
+        .carta::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        h2 {
+            margin: 35px 0 20px;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.08);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            text-align: justify;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-color);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .fecha {
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .firma {
+            text-align: right;
+            font-style: italic;
+            margin-top: 50px;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 32px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .volver {
+            background-color: var(--accent-color);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .heart-icon {
+            color: #e25555;
+            margin: 0 5px;
+        }
+
+        .memories {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(210, 166, 121, 0.1);
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .carta {
+                padding: 25px;
+                margin: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1.15rem;
+                line-height: 1.7;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carta {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1.05rem;
+                text-align: left;
+                line-height: 1.6;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="carta">
+            <h1>Gracias por Elegirme</h1>
+            <p class="fecha">Abril, 2025</p>
+            
+            <p>Querido amor de mi adolescencia,</p>
+            
+            <p>Hoy, mirando hacia atrás, quiero dedicar estas palabras a agradecerte por haberme elegido entre tantas personas que podrían haber formado parte de tu vida. Fueron tres años maravillosos que comenzaron en los pasillos de nuestro colegio y trascendieron más allá de lo que jamás imaginamos.</p>
+            
+            <p>Recuerdo con claridad aquel primer encuentro en el pasillo, cuando nuestras miradas se cruzaron por primera vez. Fue un instante fugaz, pero lleno de significado. Poco después, volvimos a cruzarnos, y esta vez había razones para saludarnos. Un chisme, de esos que corren rápido entre compañeros, nos unió por primera vez, y sin darnos cuenta, comenzó nuestra historia de amor. Entre risas y conversaciones inesperadas, descubrimos que el destino tenía planes para nosotros.</p>
+
+            <div class="memories fade-in">
+                <h2>Lo Que Construimos Juntos</h2>
+                <p>Construimos un amor real, un amor verdadero por el cual luché y esperé más de cuatro meses para poder pedirte oficialmente que fueras mi novia. Después de eso, comenzaron nuestras pequeñas aventuras, construyendo recuerdos inolvidables en los que a veces decíamos: "Ni pensar que nosotros íbamos a estar en estas".</p>
+
+                <p>Esa conexión que se creó entre nosotros, ese amor hacia la otra persona por el cual luchábamos día a día, mantuvo viva esa relación incondicional que teníamos. Fue algo único, algo que construimos juntos: los cuadros que quedaron inconclusos, las cartas llenas de sentimientos, los momentos bonitos donde me besabas la cara con lápiz labial, cuando me hacías mascarillas, cuando me sacabas granitos, o cuando salíamos a comer y disfrutábamos de nuestra compañía.</p>
+
+                <p>Todo eso lo construimos como pareja, llegando al punto de que pudimos vivir juntos por unos pocos meses. Aunque fue breve, fue un tiempo lleno de aprendizajes, amor y complicidad, que siempre llevaré en mi corazón.</p>
+            </div>
+
+            <p>Nuestras familias no se unieron como una sola, pero cada una, tanto la tuya como la mía, nos acogió y respetó nuestra relación, apoyándola y haciéndonos sentir como una pareja más de la familia. Mi mamá ya pensaba que me iba a quedar contigo; recuerdo que fuiste la única mujer que aceptó como nuera. Aunque no lo decía abiertamente, siempre preguntaba por ti, te invitaba a las reuniones familiares o salidas, y quería saber cómo íbamos como pareja. Mi papá siempre me apoyó y me recochaba con sus comentarios "¿Cómo está la chiquita brava?" "¿ Ya te vas a enchiquisar?" refiriendose a que me iba a verte eran comentarios que me hacían sonreír.</p> 
+
+            <p>Por tu parte, tu familia me acogió como un integrante más. Recuerdo las recochas, las pintadas de la casa que me gané por tu amor, los regaños y esos momentos incómodos en los que pasaba vergüenza y me ponía rojito. Pero también recuerdo las salidas, los aprendizajes y el cariño que les tengo hasta el día de hoy. Cada experiencia con ellos me enseñó algo valioso, y siempre me sentí parte de algo especial gracias a ellos.</p>
+
+            <p>Aprendimos a amar y a crecer juntos, incluso a través de nuestras familias. Me enseñaste la paciencia cuando yo solo conocía la prisa, y yo te mostré la espontaneidad cuando tú preferías la seguridad. Nos complementamos de maneras que solo ahora, con la distancia, puedo valorar plenamente. Cada recuerdo, cada momento compartido, es un tesoro que guardaré siempre en mi corazón.</p>
+
+            <div class="memories fade-in">
+                <h2>Momentos Inolvidables</h2>
+                <p>¿Te acuerdas de nuestra primera Navidad juntos? Salía de trabajar, me alisté rápidamente y tenía que salir corriendo a verte porque me esperaba un viaje hacia donde mi familia estaba reunida. Llegué a la casa de tu tío y no te encontré. Me quedé en la moto y salió tu papá a recibirme. Me dijo que entrara, creo que saludé a la familia y me dieron una cerveza, si no estoy mal. Tu papá se puso un poco de malgenio porque no llegabas, y yo igual. Mis papás empezaron a llamarme y todo se hizo eterno. No fue como esperaba, pero logré darte un beso, un abrazo, pelearnos un poco, y luego me fui. ¡Jajaja!</p>
+
+                <p>Pero después llegaron otras Navidades, donde ya pudimos compartir más, con más calma. No siempre a la hora exacta de Año Nuevo, pero sí un rato agradable antes de mi viaje cotidiano. Los regalos que nos dimos, los momentos bonitos, las fotos, y la recocha de tu familia al verme llegar. Tantos recuerdos que atesoraré en mi corazón para el resto de mi vida. Si la memoria no me falla, son momentos que nadie podrá arrancarme del corazón, y cada uno de ellos los llevo conmigo siempre.</p>
+                <p>Si nos vamos un poco a la actualidad, cada instante en el cual te miraba, cada momento en el que escuchaba tu voz, cada vez que podía ver tu sonrisa y cada instante en el que te vi en tus momentos más vulnerables, son recuerdos que atesoro profundamente. Recuerdo esos momentos cuando compartimos en Popayán, en la cocina peleando, bailando, cantando, haciendo salchipapas, o en la habitación amándonos profundamente, viendo una película, jugando Free Fire, durmiendo abrazados. Esos recuerdos son los que más fuerte me golpean y siguen dando vueltas en mi cabeza. Si me dieran la oportunidad de vivirlo otra vez, lo haría sin pensarlo dos veces, y esta vez, me esforzaría por mejorar mis errores.</p>
+            </div>
+
+            <p>No todas nuestras experiencias fueron fáciles. Tuvimos desacuerdos, momentos de duda, y aprendimos que amar también significa saber darse espacio. Pero incluso en los momentos difíciles, había un respeto profundo entre nosotros, una admiración mutua que nunca se desvaneció.</p>
+
+            <p>Aunque nuestros caminos hayan tomado direcciones diferentes, quiero que sepas que el tiempo que compartimos jamás será solo un capítulo en mi vida. Es una parte fundamental de quien soy hoy. Me enseñaste el valor de la vulnerabilidad, de mostrarme tal como soy. Me ayudaste a descubrir facetas de mí mismo que desconocía, y por eso, te estaré eternamente agradecido.</p>
+
+            <p>Gracias por cada sonrisa, cada lágrima compartida, cada momento de complicidad. Gracias por elegirme día tras día durante esos tres años. Gracias por permitirme ser parte de tu familia y por convertirte en parte de la mía. Gracias por los sueños compartidos y por aquellos que me ayudaste a descubrir.</p>
+
+            <p>Hoy, al escribir estas palabras, no siento tristeza sino una profunda gratitud por haber tenido el privilegio de caminar a tu lado durante una parte tan significativa de nuestras vidas. Llevaré conmigo cada lección, cada recuerdo, cada momento que construimos juntos.</p>
+
+            <p>Donde sea que la vida te lleve, espero que encuentres la felicidad que mereces. Y cuando mires hacia atrás, espero que también sonrías al recordar lo que fuimos, lo que vivimos, y lo que siempre significaremos el uno para el otro.</p>
+
+            <p>Con eterno cariño y gratitud,</p>
+            <p class="firma">Siempre tuyo</p>
+            
+            <a href="javascript:history.back()" class="btn volver fade-in">
+                <i class="fas fa-heart heart-icon"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Script para animación de aparición al scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Cargar fuente de Google
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap';
+            document.head.appendChild(link);
+        });
+    </script>
+</body>
+</html>

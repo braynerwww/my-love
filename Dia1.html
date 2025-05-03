@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Día 1 - Nuestro Aniversario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3d2a1d;
+            --secondary-color: #d2a679;
+            --bg-color: #fdf6e3;
+            --card-bg: #fff8e1;
+            --accent-color: #b27b56;
+            --text-color: #262626;
+            --border-radius: 15px;
+            --shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2a679' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .carta {
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        .carta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+
+        .carta::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        h2 {
+            margin: 35px 0 20px;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            text-align: justify;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-color);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        blockquote {
+            font-style: italic;
+            background: rgba(252, 234, 197, 0.7);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            line-height: 1.9;
+            font-size: 1.18rem;
+            position: relative;
+            color: #262626;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        blockquote::before {
+            content: '\201C';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 3rem;
+            color: rgba(178, 123, 86, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        blockquote::after {
+            content: '\201D';
+            position: absolute;
+            bottom: -30px;
+            right: 10px;
+            font-size: 3rem;
+            color: rgba(178, 123, 86, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        .media {
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .media-item {
+            margin: 0;
+            transition: transform 0.3s ease;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .media-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            display: block;
+            border-radius: 10px 10px 0 0;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .audio-container {
+            padding: 25px;
+            background: linear-gradient(45deg, rgba(210, 166, 121, 0.2), rgba(178, 123, 86, 0.2));
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            margin: 15px 0;
+            border-radius: 30px;
+        }
+
+        .caption {
+            padding: 15px;
+            font-size: 1.05rem;
+            color: var(--text-color);
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 0 0 10px 10px;
+            font-weight: 600;
+        }
+
+        .firma {
+            margin-top: 50px;
+            font-style: italic;
+            font-size: 1.2rem;
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .firma::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 40%;
+            height: 1px;
+            background-color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .volver {
+            background-color: var(--accent-color);
+        }
+
+        .spotify-link {
+            background-color: #1db954;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .spotify-link:hover {
+            background-color: #14833b;
+        }
+
+        @media (max-width: 768px) {
+            .carta {
+                padding: 25px;
+                margin: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            blockquote {
+                padding: 15px;
+                font-size: 1.05rem;
+            }
+            
+            .media {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carta {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1rem;
+                text-align: left;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 12px 20px;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="carta">
+            <h1>Día 1 - 3 de Mayo, Nuestro Aniversario</h1>
+            <p>
+                Hoy no podía dejar pasar esta fecha. No como antes, pero tampoco como si no significara nada. Porque aunque ya no seamos lo que fuimos, este día sigue teniendo un rincón especial en mi memoria.
+            </p>
+            <p>
+                3 de mayo… antes era celebración, risas, promesas. Hoy, es más silencio y nostalgia. Pero no quiero que lo veas como una carga, sino como un recordatorio de lo bonito que alguna vez construimos.
+            </p>
+            <p>
+                Este detalle no busca respuestas. Solo quiere que sepas que te deseo siempre lo mejor, estés donde estés, con quien estés, y que nunca dejaré de valorar todo lo que compartimos.
+            </p>
+
+            <h2>Un poema para ti</h2>
+            <blockquote class="fade-in">
+                Fuiste canción en medio del ruido,<br>
+                sol en invierno, abrigo en el frío.<br>
+                Y aunque el tiempo cambie caminos,<br>
+                tu recuerdo sigue siendo mío.<br><br>
+                No para retenerte, ni para volver,<br>
+                sino para agradecer lo vivido también.<br>
+                Porque amarte fue real, sin medida ni prisa,<br>
+                y tu risa... aún vive en mi brisa.
+            </blockquote>
+
+            <div class="audio-container fade-in">
+            
+                <audio id="audioEspecial" controls>
+                    <source src="fotos/nikole/Audio/1.mp4" type="audio/mp4">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+                <div class="caption">Una cansion bonita.</div>
+            </div>
+
+            <h2>Momentos para recordar</h2>
+            <div class="media">
+                <div class="media-item fade-in">
+                    <img src="fotos/nikole/fotos/1.jpg" alt="Recuerdo 1">
+                    <div class="caption">El día que te pedí matrimonio.</div>
+                </div>
+                <div class="media-item fade-in">
+                    <video controls>
+                        <source src="fotos/nikole/videoss/1.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="caption">Momentos que nunca olvidaré.</div>
+                </div>
+                <div class="media-item fade-in">
+                    <img src="fotos/nikole/fotos/2.jpg" alt="Recuerdo 2">
+                    <div class="caption">El día más especial de esta historia.</div>
+                </div>
+                <div class="media-item fade-in">
+                    <video controls>
+                        <source src="fotos/nikole/videoss/2.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="caption">Tus palabras, tus gestos, tu voz...</div>
+                </div>
+                <div class="media-item fade-in">
+                    <img src="fotos/nikole/fotos/3.jpg" alt="Recuerdo 3">
+                    <div class="caption">El lugar donde todo parecía eterno...</div>
+                </div>
+                <div class="media-item fade-in">
+                    <video controls>
+                        <source src="fotos/nikole/videoss/3.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="caption">Risas que aún resuenan en mi mente.</div>
+                </div>
+                <div class="media-item fade-in">
+                    <img src="fotos/nikole/fotos/4.jpg" alt="Recuerdo 4">
+                    <div class="caption">Tus ojos y su forma de hablar sin palabras.</div>
+                </div>
+                <div class="media-item fade-in">
+                    <video controls>
+                        <source src="fotos/nikole/videoss/4.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="caption">Te llevaste mi corazón y mi gratitud eterna por haberme dado tanta felicidad.</div>
+                </div>
+            </div>
+
+            <!-- Botón de enlace a Spotify -->
+            <a href="https://open.spotify.com/playlist/41gpBVMZRbYQDADssIg1AK?si=0vwAMcBASZ2_atoto3M5rg&pt=e4e9688d66459d408f043fb0d9a1ca92" target="_blank" class="btn spotify-link fade-in">
+                <i class="fab fa-spotify"></i> Escucha nuestra playlist
+                <div class="caption">Para el amor de mi vida ❤</div>
+            </a>
+
+            <p class="firma fade-in">
+                Con cariño, quien siempre te llevará en su corazón,<br>
+                alguien que te amó de verdad… y aún te ama.
+            </p>
+
+            <a href="paginaPrincipal.html" class="btn volver fade-in">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Script para animación de aparición al scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Cargar fuente de Google
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap';
+            document.head.appendChild(link);
+        });
+    </script>
+</body>
+</html>

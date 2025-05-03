@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre tu sorpresa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Bienvenida a tu aventura diaria</h1>
+    <p>Cada día tendrás una nueva sorpresa. Ingresa la contraseña para desbloquear el botón correspondiente.</p>
+
+    <!-- Formulario para ingresar contraseñas -->
+    <div class="password-section">
+        <input type="password" id="password" placeholder="Ingresa la contraseña">
+        <button onclick="unlockButton()">Desbloquear</button>
+    </div>
+
+    <!-- Botones bloqueados -->
+    <div class="buttons-section">
+        <button id="button0" onclick="window.location.href='Dia0.html'">Día 0</button>
+        <button id="button1" class="locked" disabled onclick="window.location.href='Dia1.html'">Día 1</button>
+        <button id="button2" class="locked" disabled onclick="window.location.href='Dia2.html'">Día 2</button>
+        <button id="button3" class="locked" disabled onclick="window.location.href='Dia3.html'">Día 3</button>
+        <button id="button4" class="locked" disabled onclick="window.location.href='Dia4.html'">Día 4</button>
+        <button id="button5" class="locked" disabled onclick="window.location.href='Dia5.html'">Día 5</button>
+        <button id="button6" class="locked" disabled onclick="window.location.href='Dia6.html'">Día 6</button>
+        <button id="button7" class="locked" disabled onclick="window.location.href='Dia7.html'">Día 7</button>
+        <button id="button8" class="locked" disabled onclick="window.location.href='Dia8.html'">Día 8</button>
+        <button id="button9" class="locked" disabled onclick="window.location.href='Dia9.html'">Día 9</button>
+        <button id="button10" class="locked" disabled onclick="window.location.href='Dia10.html'">Día 10</button>
+        <button id="button11" class="locked" disabled onclick="window.location.href='Dia11.html'">Día 11</button>
+        <button id="button12" class="locked" disabled onclick="window.location.href='Dia12.html'">Día 12</button>
+        <button id="button13" class="locked" disabled onclick="window.location.href='Dia13.html'">Día 13</button>
+        <button id="button14" class="locked" disabled onclick="window.location.href='Dia14.html'">Día 14</button>
+        <button id="button15" class="locked" disabled onclick="window.location.href='Dia15.html'">Día 15</button>
+        <button id="button16" class="locked" disabled onclick="window.location.href='Dia16.html'">Día 16</button>
+        <button id="button17" class="locked" disabled onclick="window.location.href='Dia17.html'">Día 17</button>
+        <button id="button18" class="locked" disabled onclick="window.location.href='Dia18.html'">Día 18</button>
+        <button id="button19" class="locked" disabled onclick="window.location.href='Dia19.html'">Día 19</button>
+    </div>
+
+    <!-- Botón para borrar el almacenamiento local -->
+    <button onclick="resetButtons()">Reiniciar</button>
+
+    <script>
+        // Contraseñas para cada día
+        const passwords = {
+
+            "Día 1": "me vas a extrañar",               // Darío Gómez
+            "Día 2": "te amo más que a mi vida",        // Diomedes Díaz
+            "Día 3": "ven devórame otra vez",           // Lalo Rodríguez
+            "Día 4": "porque te quiero te aporreo",     // Joan Sebastian
+            "Día 5": "caricias que matan",              // Grupo Niche
+            "Día 6": "me bebí tu recuerdo",             // Felipe Peláez
+            "Día 7": "yo no nací para amar",            // Juan Gabriel / Joan S.
+            "Día 8": "mi amor por ti no tiene final",   // El Binomio de Oro
+            "Día 9": "perdóname si te hago llorar",     // Joan Sebastian
+            "Día 10": "te necesito como el aire",       // Silvestre Dangond
+            "Día 11": "no hay cama pa' tanta gente",    // El Gran Combo
+            "Día 12": "tú tienes la culpa de todo",     // Diomedes Díaz
+            "Día 13": "me erizaste la piel",            // Gilberto Santa Rosa
+            "Día 14": "te lo juro por Dios",            // Jorge Celedón
+            "Día 15": "prohibido quererte",             // Grupo Galé
+            "Día 16": "te soñé tantas veces",           // Joan Sebastian
+            "Día 17": "me dejaste sin aliento",         // Marc Anthony
+            "Día 18": "tus besos saben a pecado",       // Juan Gabriel
+            "Día 19": "cuando yo quiera ser grande"     // Joan Sebastian
+        };
+
+        // Función para desbloquear botones
+        function unlockButton() {
+            const inputPassword = document.getElementById("password").value;
+            const buttons = document.querySelectorAll(".buttons-section button");
+
+            buttons.forEach(button => {
+                if (passwords[button.textContent] === inputPassword) {
+                    button.disabled = false;
+                    button.classList.remove("locked");
+                    button.classList.add("unlocked");
+
+                    // Guardar en localStorage que el botón está desbloqueado
+                    localStorage.setItem(button.id, "unlocked");
+                }
+            });
+        }
+
+        // Función para cargar el estado de los botones desde localStorage
+        function loadButtonStates() {
+            const buttons = document.querySelectorAll(".buttons-section button");
+
+            buttons.forEach(button => {
+                if (localStorage.getItem(button.id) === "unlocked") {
+                    button.disabled = false;
+                    button.classList.remove("locked");
+                    button.classList.add("unlocked");
+                }
+            });
+        }
+
+        // Cargar el estado de los botones al cargar la página
+        window.onload = loadButtonStates;
+
+        // Función para borrar el almacenamiento local
+        function resetButtons() {
+            // Limpiar el almacenamiento local
+            localStorage.clear();
+
+            // Recargar la página para restablecer los estados
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
