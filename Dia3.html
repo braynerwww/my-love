@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Gracias por Elegirme</title>
+    <title>100 Razones Por Las Que Quiero Volver Contigo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
-        /* Estilos existentes */
         :root {
             --primary-color: #3d2a1d;
             --secondary-color: #d2a679;
@@ -64,15 +63,32 @@
             font-weight: 600;
         }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 22px;
-            text-align: justify;
+        .razones-container {
+            text-align: left;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--text-color);
+            margin: 0 auto;
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .razon {
+            margin-bottom: 15px;
+            break-inside: avoid;
+            padding: 12px 15px;
+            background-color: rgba(210, 166, 121, 0.1);
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .razon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(178, 123, 86, 0.2);
+        }
+
+        .razon span {
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-right: 8px;
         }
 
         .fecha {
@@ -91,7 +107,7 @@
 
         .btn {
             display: inline-block;
-            margin-top: 30px;
+            margin: 30px 10px;
             padding: 14px 32px;
             background-color: var(--secondary-color);
             color: white;
@@ -108,48 +124,273 @@
         .btn:hover {
             background-color: var(--accent-color);
         }
+
+        .video-container {
+            margin: 40px auto;
+            max-width: 800px;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-color);
+        }
+
+        /* Estilos mejorados para los audios */
+        .audio-section {
+            margin: 50px auto 30px;
+            max-width: 700px;
+        }
+
+        .audio-section h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .audio-container {
+            background: linear-gradient(to right, rgba(210, 166, 121, 0.2), rgba(178, 123, 86, 0.2));
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .audio-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .audio-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .audio-player-wrapper {
+            position: relative;
+            padding: 0 15px;
+        }
+
+        audio {
+            width: 100%;
+            border-radius: 30px;
+            outline: none;
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .audio-description {
+            font-style: italic;
+            color: var(--primary-color);
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+
+        .audio-icon {
+            display: inline-block;
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .razones-container {
+                columns: 1;
+            }
+            .carta {
+                padding: 25px;
+            }
+            .audio-container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="carta">
-            <h1>Gracias por Elegirme</h1>
-            <p class="fecha">Abril, 2025</p>
+            <h1>100 Razones Por Las Que Quiero Volver Contigo</h1>
             
-            <p>Querido amor de mi adolescencia,</p>
+            <p class="fecha">Porque 3 años de amor no se olvidan...</p>
             
-            <p>Hoy, mirando hacia atrás, quiero dedicar estas palabras a agradecerte por haberme elegido entre tantas personas que podrían haber formado parte de tu vida. Fueron tres años maravillosos que comenzaron en los pasillos de nuestro colegio y trascendieron más allá de lo que jamás imaginamos.</p>
+            <p class="intro">Mi princesa, desde aquellos días en el colegio hasta hoy, cada momento contigo ha llenado mi corazón. Aunque ahora estemos separados, estos recuerdos me hacen querer luchar por lo nuestro. Estas son mis 100 razones para volver a tu lado:</p>
             
-            <p>Recuerdo con claridad aquel primer encuentro en el pasillo, cuando nuestras miradas se cruzaron por primera vez. Fue un instante fugaz, pero lleno de significado. Poco después, volvimos a cruzarnos, y esta vez había razones para saludarnos. Un chisme, de esos que corren rápido entre compañeros, nos unió por primera vez, y sin darnos cuenta, comenzó nuestra historia de amor. Entre risas y conversaciones inesperadas, descubrimos que el destino tenía planes para nosotros.</p>
+            <div class="razones-container">
+                <div class="razon"><span>1.</span> Tu sonrisa es el amanecer que ilumina todos mis días oscuros.</div>
+                <div class="razon"><span>2.</span> La manera en que tus ojos brillan cuando me miras me hace sentir el hombre más afortunado.</div>
+                <div class="razon"><span>3.</span> Nuestras "chocoaventuras" cogiendo maíz jaja.</div>
+                <div class="razon"><span>4.</span> Cómo te abrazas a mí cuando vamos en la moto, sintiendo tu calor contra mi espalda.(solo cuando frenaba duro pero lo amo)</div>
+                <div class="razon"><span>5.</span> Las tardes comiendo hamburguesas en nuestro lugar favorito donde siempre mirabamos si la especial o la sencilla.</div>
+                <div class="razon"><span>6.</span> Tu risa cuando fingía tener miedo en las películas de terror solo para abrazarte más fuerte.</div>
+                <div class="razon"><span>7.</span> Nuestro primer beso a la orilla del río, con el sonido del agua y el sol como testigos de nuestro amor eterno.</div>
+                <div class="razon"><span>8.</span> Cómo me apoyas incondicionalmente en cada sueño que tengo, por loco que parezca.</div>
+                <div class="razon"><span>9.</span> La forma en que celebras mis pequeños logros como si fueran trofeos olimpicos.</div>
+                <div class="razon"><span>10.</span> Tus mensajes de buenos días que me daban energía para enfrentar cualquier cosa.</div>
+                <div class="razon"><span>11.</span> Los arrunchis de domingo cuando el mundo se detenía y solo existíamos tú y yo.</div>
+                <div class="razon"><span>12.</span> Tu dedicación para hacer que cada detalle sea especial entre nosotros.</div>
+                <div class="razon"><span>13.</span> Cómo me inspirabas a ser mejor hombre cada día a tu lado.</div>
+                <div class="razon"><span>14.</span> Las sorpresas que me dabas solo porque sí, sin esperar nada a cambio.</div>
+                <div class="razon"><span>15.</span> Tu honestidad, incluso cuando era difícil decir la verdad.</div>
+                <div class="razon"><span>16.</span> La forma en que me cuidabas cuando estaba enfermo, haciéndome sentir protegido.</div>
+                <div class="razon"><span>17.</span> Los sueños que compartíamos sobre nuestro futuro mientras mirábamos las estrellas.</div>
+                <div class="razon"><span>18.</span> Tu valentía para enfrentar los problemas que parecían imposibles.</div>
+                <div class="razon"><span>19.</span> Cómo me defendías ante cualquier persona que hablara mal de mí.</div>
+                <div class="razon"><span>20.</span> Las noches de películas donde nos quedábamos dormidos abrazados en el sofá.</div>
+                <div class="razon"><span>21.</span> Tu forma única de ver el mundo que me abrió los ojos a nuevas perspectivas.</div>
+                <div class="razon"><span>22.</span> La paz que siento cuando estoy a tu lado, como si nada más importara.</div>
+                <div class="razon"><span>23.</span> Las cartas que me escribías con frases que guardé en mi corazón.</div>
+                <div class="razon"><span>24.</span> Nuestra canción que sonaba mientras bailábamos abrazados en la habitación.</div>
+                <div class="razon"><span>25.</span> Tu sentido del humor que me arrancaba sonrisas incluso en mis peores días.</div>
+                <div class="razon"><span>26.</span> Cómo respetabas mis momentos de soledad sin sentirte ofendida.</div>
+                <div class="razon"><span>27.</span> La pasión que ponías en todo lo que hacías, contagiándome de tu energía.</div>
+                <div class="razon"><span>28.</span> Las "chocoaventuras" nocturnas buscando una tienda abierta para comprar una gaseosa o algo rico pa comer</div>
+                <div class="razon"><span>29.</span> Tu forma de escucharme sin juzgar, haciéndome sentir comprendido.</div>
+                <div class="razon"><span>30.</span> Cómo me hacías sentir seguro y capaz de conquistar el mundo entero.</div>
+                <div class="razon"><span>31.</span> La confianza que construimos durante estos años, mi tesoro más valioso.</div>
+                <div class="razon"><span>32.</span> Tu capacidad para perdonar mis errores cuando no lo merecía.</div>
+                <div class="razon"><span>33.</span> Las cenas improvisadas que cocinábamos juntos entre risas y música.</div>
+                <div class="razon"><span>34.</span> Tu manera de recordar cada detalle importante sobre mí y mi familia.</div>
+                <div class="razon"><span>35.</span> Cómo nuestras manos encajan perfectamente como piezas de un rompecabezas.</div>
+                <div class="razon"><span>36.</span> Las noches en que nos quedábamos en la cama, hablando de tonterías, acariciándonos y mirando el techo, sintiendo que el mundo se detenía solo para nosotros.</div>
+                <div class="razon"><span>37.</span> Tu forma de calmarme con solo un abrazo cuando el estrés me consumía.</div>
+                <div class="razon"><span>38.</span> Los paseos en moto sin rumbo fijo, sintiendo la libertad juntos.</div>
+                <div class="razon"><span>39.</span> Tu forma de ver soluciones donde yo solo veía problemas.</div>
+                <div class="razon"><span>40.</span> Cómo celebrábamos cada mes juntos como si fuera uno  de los ultimos aniversario especial, (antes ahora pasaban desapercibidos).</div>
+                <div class="razon"><span>41.</span> Tu determinación cuando te proponías alcanzar una meta.</div>
+                <div class="razon"><span>42.</span> Los pequeños espacios que compartimos sintiéndolos como nuestro hogar.</div>
+                <div class="razon"><span>43.</span> Tus consejos que siempre llegaban en el momento perfecto.</div>
+                <div class="razon"><span>44.</span> Las fotos que tenemos desde el colegio, testigos de nuestro crecimiento juntos.</div>
+                <div class="razon"><span>45.</span> Tu habilidad para hacerme ver el lado positivo en los momentos difíciles.</div>
+                <div class="razon"><span>46.</span> Los buenos días con besos y las buenas noches con abrazos.</div>
+                <div class="razon"><span>47.</span> Cómo me aceptabas con todos mis defectos, haciéndome sentir perfecto.</div>
+                <div class="razon"><span>48.</span> Tu forma de bailar conmigo en la cocina mientras preparábamos el desayuno.</div>
+                <div class="razon"><span>49.</span> La sincronía que teníamos al punto de saber lo que pensábamos sin hablar.</div>
+                <div class="razon"><span>50.</span> Los helados a medianoche en el río, con la luna como testigo de nuestro amor.</div>
+                <div class="razon"><span>51.</span> Cómo me sorprendías con pequeños detalles que significaban el mundo para mí.</div>
+                <div class="razon"><span>52.</span> Los sueños que planeamos realizar juntos algún día.</div>
+                <div class="razon"><span>53.</span> Tu forma de animarme cuando sentía que todo iba mal.</div>
+                <div class="razon"><span>54.</span> Las maratones de series donde nos quedábamos despiertos hasta el amanecer.</div>
+                <div class="razon"><span>55.</span> Cómo te ganaste el corazón de mi familia con tu dulzura.</div>
+                <div class="razon"><span>56.</span> Tu manera de recordar nuestras fechas especiales con detalles únicos.</div>
+                <div class="razon"><span>57.</span> Las caricias únicas que solo tú sabes dar, llenándome de amor y haciéndome sentir especial.</div>
+                <div class="razon"><span>58.</span> Tu forma de expresar amor en los pequeños gestos cotidianos.</div>
+                <div class="razon"><span>59.</span> Cómo te preocupabas por mi bienestar más que por el tuyo.</div>
+                <div class="razon"><span>60.</span> La forma en que maduramos juntos, aprendiendo uno del otro.</div>
+                <div class="razon"><span>61.</span> Tu capacidad para hacerme sentir amado incluso en la distancia.</div>
+                <div class="razon"><span>62.</span> Cómo me motivabas a perseguir mis sueños sin temor al fracaso.</div>
+                <div class="razon"><span>63.</span> Las notas de amor que dejabas en mis cuadernos o en mi mochila.</div>
+                <div class="razon"><span>64.</span> Tu manera tranquila de resolver conflictos sin perder la calma.</div>
+                <div class="razon"><span>65.</span> Los silencios compartidos donde las palabras sobraban.</div>
+                <div class="razon"><span>66.</span> Cómo me sorprendías recordando cosas que mencioné meses atrás.</div>
+                <div class="razon"><span>67.</span> Tu forma de celebrar mis pequeños logros como si fueran monumentales.</div>
+                <div class="razon"><span>68.</span> Porque a tu lado cualquier lugar se convertía en mi hogar.</div>
+                <div class="razon"><span>69.</span> Tu forma de respetar mis decisiones aunque no siempre las compartieras.</div>
+                <div class="razon"><span>70.</span> Las "chocoaventuras" que siempre me hacen sonreír, recordando lo especial que eres para mí.</div>
+                <div class="razon"><span>71.</span> Los domingos de arrunchis donde el tiempo parecía detenerse.</div>
+                <div class="razon"><span>72.</span> Tu forma de darme espacio cuando lo necesitaba sin sentirte insegura.</div>
+                <div class="razon"><span>73.</span> Los mensajes tiernos que me enviabas en medio de las clases.</div>
+                <div class="razon"><span>74.</span> Tu apoyo incondicional cuando enfrenté los momentos más difíciles.</div>
+                <div class="razon"><span>75.</span> Cómo superamos juntos cada obstáculo haciéndonos más fuertes.</div>
+                <div class="razon"><span>76.</span> Tu forma de escuchar mis historias aunque las hubieras oído mil veces.</div>
+                <div class="razon"><span>77.</span> Los recuerdos que creamos cada mes al celebrar nuestro amor.</div>
+                <div class="razon"><span>78.</span> Tu capacidad para hacer que cualquier momento ordinario se volviera especial.</div>
+                <div class="razon"><span>79.</span> El respeto con que tratabas mis opiniones aunque fueran diferentes.</div>
+                <div class="razon"><span>80.</span> Las escapadas secretas donde el mundo desaparecía y solo existíamos tú y yo, amándonos profundamente.</div>
+                <div class="razon"><span>81.</span> Las hamburguesas que compartíamos a mitad de precio cuando andábamos "cortos".</div>
+                <div class="razon"><span>82.</span> Cómo me conoces mejor que yo mismo, anticipando mis necesidades.</div>
+                <div class="razon"><span>83.</span> La complicidad que teníamos desde el colegio, con nuestras miradas secretas.</div>
+                <div class="razon"><span>84.</span> Tu apoyo en mis cambios y decisiones, siempre a mi lado.</div>
+                <div class="razon"><span>85.</span> Las veces que fingí tener miedo con las películas solo para sentir tu abrazo.</div>
+                <div class="razon"><span>86.</span> Tu forma de planear pequeñas sorpresas que alegraban mi semana.</div>
+                <div class="razon"><span>87.</span> Cómo compartías tus pensamientos más profundos solo conmigo.</div>
+                <div class="razon"><span>88.</span> Las veces que me cuidaste sin que te lo pidiera cuando más lo necesitaba.</div>
+                <div class="razon"><span>89.</span> Las nuevas "chocoaventuras" que quedaron pendientes por descubrir juntos.</div>
+                <div class="razon"><span>90.</span> Tu forma de demostrar cariño con pequeños gestos que solo yo entendía.</div>
+                <div class="razon"><span>91.</span> Cuando me prestabas tu chaqueta para protegerme del frío en el camino de regreso a casa, antes de despedirnos con tanto amor.</div>
+                <div class="razon"><span>92.</span> Tu forma de hacerme ver mis errores con amor y sin reproches.</div>
+                <div class="razon"><span>93.</span> Las risas incontrolables por tonterías que solo nosotros entendíamos.</div>
+                <div class="razon"><span>94.</span> Porque contigo el tiempo volaba y nunca era suficiente.</div>
+                <div class="razon"><span>95.</span> Las fotos que tomabas de mí cuando no me daba cuenta.</div>
+                <div class="razon"><span>96.</span> Porque eres mi lugar seguro cuando todo parece derrumbarse.</div>
+                <div class="razon"><span>97.</span> Las veces que me esperaste pacientemente cuando llegaba tarde.</div>
+                <div class="razon"><span>98.</span> Tu forma de quererme en mis peores días, cuando ni yo me soportaba.</div>
+                <div class="razon"><span>99.</span> Porque a pesar de la distancia, sigues siendo mi primer pensamiento al despertar.</div>
+                <div class="razon"><span>100.</span> Porque no quiero imaginar un futuro donde no estés tú, mi amor.</div>
+            </div>
+            
+            <!-- Sección de audios mejorada -->
+            <div class="audio-section">
+                
+                <div class="audio-container">
+                    <div class="audio-title">
+                        <i class="fas fa-music audio-icon"></i>
+                    </div>
+                    <div class="audio-player-wrapper">
+                        <audio controls>
+                            <source src="fotos/nikole/Audio/4.mp4" type="audio/mp4">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                    <div class="audio-description"></div>
+                </div>
 
-            <h2>Lo Que Construimos Juntos</h2>
-            <p>Construimos un amor real, un amor verdadero por el cual luché y esperé más de cuatro meses para poder pedirte oficialmente que fueras mi novia. Después de eso, comenzaron nuestras pequeñas aventuras, construyendo recuerdos inolvidables en los que a veces decíamos: "Ni pensar que nosotros íbamos a estar en estas".</p>
-
-            <p>Esa conexión que se creó entre nosotros, ese amor hacia la otra persona por el cual luchábamos día a día, mantuvo viva esa relación incondicional que teníamos. Fue algo único, algo que construimos juntos: los cuadros que quedaron inconclusos, las cartas llenas de sentimientos, los momentos bonitos donde me besabas la cara con lápiz labial, cuando me hacías mascarillas, cuando me sacabas granitos, o cuando salíamos a comer y disfrutábamos de nuestra compañía.</p>
-
-            <p>Todo eso lo construimos como pareja, llegando al punto de que pudimos vivir juntos por unos pocos meses. Aunque fue breve, fue un tiempo lleno de aprendizajes, amor y complicidad, que siempre llevaré en mi corazón.</p>
-
-            <h2>Momentos Inolvidables</h2>
-            <p>¿Te acuerdas de nuestra primera Navidad juntos? Salía de trabajar, me alisté rápidamente y tenía que salir corriendo a verte porque me esperaba un viaje hacia donde mi familia estaba reunida. Llegué a la casa de tu tío y no te encontré. Me quedé en la moto y salió tu papá a recibirme. Me dijo que entrara, creo que saludé a la familia y me dieron una cerveza, si no estoy mal. Tu papá se puso un poco de malgenio porque no llegabas, y yo igual. Mis papás empezaron a llamarme y todo se hizo eterno. No fue como esperaba, pero logré darte un beso, un abrazo, pelearnos un poco, y luego me fui. ¡Jajaja!</p>
-
-            <p>Pero después llegaron otras Navidades, donde ya pudimos compartir más, con más calma. No siempre a la hora exacta de Año Nuevo, pero sí un rato agradable antes de mi viaje cotidiano. Los regalos que nos dimos, los momentos bonitos, las fotos, y la recocha de tu familia al verme llegar. Tantos recuerdos que atesoraré en mi corazón para el resto de mi vida. Si la memoria no me falla, son momentos que nadie podrá arrancarme del corazón, y cada uno de ellos los llevo conmigo siempre.</p>
-
-            <p>No todas nuestras experiencias fueron fáciles. Tuvimos desacuerdos, momentos de duda, y aprendimos que amar también significa saber darse espacio. Pero incluso en los momentos difíciles, había un respeto profundo entre nosotros, una admiración mutua que nunca se desvaneció.</p>
-
-            <p>Aunque nuestros caminos hayan tomado direcciones diferentes, quiero que sepas que el tiempo que compartimos jamás será solo un capítulo en mi vida. Es una parte fundamental de quien soy hoy. Me enseñaste el valor de la vulnerabilidad, de mostrarme tal como soy. Me ayudaste a descubrir facetas de mí mismo que desconocía, y por eso, te estaré eternamente agradecido.</p>
-
-            <p>Gracias por cada sonrisa, cada lágrima compartida, cada momento de complicidad. Gracias por elegirme día tras día durante esos tres años. Gracias por permitirme ser parte de tu familia y por convertirte en parte de la mía. Gracias por los sueños compartidos y por aquellos que me ayudaste a descubrir.</p>
-
-            <p>Hoy, al escribir estas palabras, no siento tristeza sino una profunda gratitud por haber tenido el privilegio de caminar a tu lado durante una parte tan significativa de nuestras vidas. Llevaré conmigo cada lección, cada recuerdo, cada momento que construimos juntos.</p>
-
-            <p>Donde sea que la vida te lleve, espero que encuentres la felicidad que mereces. Y cuando mires hacia atrás, espero que también sonrías al recordar lo que fuimos, lo que vivimos, y lo que siempre significaremos el uno para el otro.</p>
-
-            <p class="firma">Con eterno cariño y gratitud,<br>Siempre tuyo</p>
+                <div class="audio-container">
+                    <div class="audio-title">
+                        <i class="fas fa-heart audio-icon"></i>
+                    </div>
+                    <div class="audio-player-wrapper">
+                        <audio controls>
+                            <source src="fotos/nikole/Audio/5.mp4" type="audio/mp4">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                    <div class="audio-description"></div>
+                </div>
+            </div>
+            
+            <p class="firma">Con todo mi corazón y esperando una oportunidad...</p>
             
             <a href="javascript:history.back()" class="btn volver">
                 <i class="fas fa-heart"></i> Volver
             </a>
         </div>
     </div>
+    
+    <script>
+        // Mejoras en la experiencia de usuario para los audios
+        document.addEventListener('DOMContentLoaded', function() {
+            // Añadir efecto hover a los contenedores de audio
+            const audioContainers = document.querySelectorAll('.audio-container');
+            
+            audioContainers.forEach(container => {
+                container.addEventListener('mouseenter', function() {
+                    this.style.background = 'linear-gradient(to right, rgba(210, 166, 121, 0.3), rgba(178, 123, 86, 0.3))';
+                });
+                
+                container.addEventListener('mouseleave', function() {
+                    this.style.background = 'linear-gradient(to right, rgba(210, 166, 121, 0.2), rgba(178, 123, 86, 0.2))';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
