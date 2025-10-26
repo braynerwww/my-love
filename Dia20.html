@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esta es mi forma de decirte adiós</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f4e4c1 0%, #e8d5b7 100%);
+            color: #5a3e2b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: justify;
+            padding: 40px 20px;
+        }
+
+        .carta {
+            background: #fff8dc;
+            border: 2px solid #d2b48c;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            width: 90%;
+            max-width: 850px;
+            border-radius: 15px;
+            line-height: 1.8;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #5a3e2b;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 3px double #d2b48c;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            text-align: center;
+            margin: 40px 0 25px 0;
+            color: #8b6f47;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            text-indent: 20px;
+        }
+
+        .multimedia-section {
+            background: linear-gradient(145deg, #f9f3e3 0%, #f5ede0 100%);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 12px;
+            border: 1px solid #d2b48c;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .cancion-item, .video-item {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #d2b48c;
+        }
+
+        .cancion-item:hover, .video-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cancion-item h3, .video-item h3 {
+            margin: 0 0 15px 0;
+            color: #8b6f47;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 10px;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: #f9f3e3;
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .separador {
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #d2b48c, transparent);
+            margin: 30px auto;
+        }
+
+        .volver {
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #d2b48c 0%, #c4a47a 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .volver:hover {
+            background: linear-gradient(135deg, #c4a47a 0%, #a67c52 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .carta {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            video {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carta">
+        <h1>Esta es mi forma de decirte adiós</h1>
+        <p>No sé por dónde empezar. Siendo sincero, no quiero hacer esto, no quiero sentir esa sensación de que ya no vas a estar para hacerte dar malgenio, para verte sonreír o para ver esos pucheros.</p>
+        <p>Son muchos recuerdos que se me pasan por la mente como una estrella fugaz en estos momentos. Nunca me imaginé que esta "chocoaventura" se fuera a terminar. Soñé —y creo que no solo yo— con un futuro juntos, con ese "para siempre" tan real.</p>
+        <p>Lo quiero, lo quise… pero hoy te digo adiós y gracias.</p>
+        <p>Adiós, porque así como la vida nos juntó de una forma un poco extraña, también nos separó de una forma extraña para mí. Me quedo con tantas preguntas sin responder. No entiendo muchas cosas, no sé qué tan malo pude llegar a ser. No entiendo por qué esto se acabó si aún el sentimiento estaba. No entiendo por qué no me escribiste, por qué si ambos soñábamos con tener algo real a futuro y formar una familia, esto terminó.</p>
+        <p>No entiendo por qué, si decíamos que éramos el amor de nuestras vidas, nos dejamos ir… me dejaste ir. Me han hecho entender que si realmente amas a una persona, luchas por eso una y otra vez, las veces que sean necesarias; aguantas, callas y dialogas para mejorar.</p>
+        <p>Por más que no supe hacerlo del todo bien, lo intenté y lo estaba logrando. No entiendo por qué no quisiste mirar qué pasaba después de la página "80". No sabes si lo lograba o no. Recuerdo que me dijiste que había cambiado mucho, pero aun sabiendo eso, ya no estabas dispuesta a quedarte, por más que te lo pidiera.</p>
+        <p>Por más que viste mis lágrimas pasar por mi mejilla, demostrando lo valioso que eres y eras para mí. A pesar de todo lo que vivimos, lo que callé y lo que expresé, nunca cambió. Pero el amor es tan ciego y puro, que siempre me quedé, incluso cuando tus actitudes a veces me decían "vete". No lo hice porque quería que fueras tú, porque soñaba con estar en tus días buenos, malos y regulares.</p>
+        <p>Quería verte y ser parte de cada uno de tus logros. Son una y mil dudas que siempre pasan por mi mente, sin explicación alguna. No entiendo cómo puedes decir "te amo" o "amor" tan rápido, cuando tú misma me recalcabas el significado tan grande que tenían esas palabras.</p>
+        <p>No entiendo por qué volviste a repetir el mismo patrón de cómo empezó nuestra relación. No entiendo qué era lo que sentías por mí para que pudieras reemplazarme así, tan fácil y tan rápido. No logro comprender cómo puedes hablar con alguien más tan pronto, sin recordarme. Qué habilidad tan grande… lastimosamente no la tengo. Pero por un lado, prefiero estar solo, como al inicio, como cuando llegaste.</p>
+        <p>Es raro: llegaste cuando no quería nada con nadie, cuando no me interesaba nadie, y te metiste en mis pensamientos y en mi corazón. Ibas y volvías a tu antojo, y lo permití, hasta cierto punto. Luego seguimos con el mismo juego hasta ese día en que empezamos a hablar más, intentando formalizar todo.</p>
+        <p>Recuerdo esos cuatro meses que me hiciste esperar para que la relación fuera pública, más que eso, para que nos vieran juntos, para que tu familia se diera cuenta de que ya tenías otra persona y yo pudiera pedirte que fuéramos algo oficialmente. Jaja, creo que es lo mismo que le está pasando a alguien actualmente, si es que los chismes de pasillo no me fallan.</p>
+        <p>Lastimosamente, al inicio no lograba sacarte de mi mente y esa esperanza siempre estaba ahí. Ese dolor de no ser yo carcomía mi mente. Es tanto el amor y la insistencia de querer intentarlo de nuevo, que ahora tengo conocidos del pueblo de tu nuevo amor. La gente es muy chismosa.</p>
+        <p>A veces hubiera preferido no haber sabido nada de lo que estabas haciendo. Pero, por más que no quería, esos mensajes y capturas de números desconocidos llegaban a carcomer y alimentar mi dolor y mi mente. No sé qué tan arrastrado pude llegar a ser "por el amor de mi vida".</p>
+        <p>Pero muchas personas y la vida me hicieron entender que el amor de tu vida se queda, pase lo que pase. Aguanta tu peor versión, dialoga hasta lograr tener una relación estable y da el 100% al mismo tiempo.</p>
+        <p>Y entendí que, para ti, fui una persona más en tu vida amorosa. Fui la balsa que te acompañó a cruzar el río. Así como tú llegaste a mi vida a calmar muchas tormentas, yo llegué a la tuya para intentar hacer lo mismo.</p>
+        <p>Agradezco que llegaras. Estuviste en mis peores momentos y no me dejaste solo. Tenía tu apoyo y me ayudaste a sobrellevar muchas situaciones, y eso siempre lo llevaré en mi corazón y mi mente. Pero, así como trataste de curar mis heridas, también dejaste unas nuevas y reabriste algunas viejas.</p>
+        <p>No te estoy echando la culpa de nada, solo te cuento cómo me sentía, cómo me siento, y las muchas dudas que me dejaste. Ese sin sabor que poco a poco se fue convirtiendo en decepción nuevamente.</p>
+        <p>Jaja, yo sí sabía que esas reacciones a notas, publicaciones e historias desde julio eran por algo. No sé desde cuándo, pero al final no me equivoqué. Espero que puedas encontrar el amor que siempre soñé darte: ese amor desinteresado, sincero y puro que ahora dejas en mis manos.</p>
+        <p>Es raro estar haciendo esto, sabiendo que muchas veces me perdí en mis pensamientos y en el dolor por querer estar bien contigo y seguir con la relación. Y estaba tan dispuesto a hacerlo otra vez… que ya lo estaba haciendo, hasta que de una u otra forma me dijiste que ya no querías nada conmigo, que no ibas a volver, que entendiera.</p>
+        <p>Pero no quería aceptar, no quería decir adiós. No quería soltar a la persona con la que soñaba estar en un futuro. Acepto que la cagué, que fui inmaduro y me dejé llevar por el orgullo muchas veces, lastimándote —unas veces más que otras—.</p>
+        <p>Sé que no logras perdonarme y que eso siempre quedó en tu corazón, haciendo que cambiaras tu forma de verme. Pido perdón, y le pido a Dios que te haga entender que nunca quise lastimarte, que nunca mis intenciones fueron malas, ni mucho menos estar contigo por tu cuerpo, como a veces decías.</p>
+        <p>Te amo tanto, a pesar de todo lo que ha pasado, lo sigo haciendo. Pero así como para ti fue tan fácil reemplazarme y olvidarme de la nada, yo tengo que soltarte y decir adiós.</p>
+        <p>Si la vida nos vuelve a juntar, espero que seamos lo suficientemente maduros como para poder tener una conversación sana, como los adultos que ya somos.</p>
+        <p>No creo que quieras hablarme, por X o Y motivo, pero si la vida así lo quiere, solo pido eso. De una y mil formas, te doy gracias por llegar a mi vida, por ese apoyo, por haberme permitido ser parte —por un momento— de tu familia y de tu vida.</p>
+        <p>Siempre me voy a quedar con los más bonitos recuerdos de ti y de nosotros. Siempre vas a ser parte de mis recuerdos. Te vas de una forma rara para mí, pero me dejas muchas enseñanzas de esta relación.</p>
+        <p>Espero que tus decisiones sean acertadas y encuentres la felicidad que siempre quise para ti.</p>
+        <p>Y te lo digo como consejo: por más que estés con una persona mucho tiempo, aunque haya mucha confianza, no vuelvas a mandar fotos, ya sabes cómo. Por más que quieras que las vean solo una vez, pueden quedar guardadas por mucho tiempo.</p>
+        <p>Si aún tienes fotos mías, ten cuidado. Si quieres, bórralas o guárdalas, pero con precaución. Es muy fácil robar información de la galería. No te conectes a redes Wi-Fi de centros comerciales o lugares públicos, como consejo y por lo que me han contado.</p>
+        <p>Por más ganas o necesidad que tengas, hazte esperar, todo tiene su tiempo, su momento. Conoce bien a las personas, y con el tiempo verás sus verdaderas intenciones.</p>
+        <p>A pesar de todo, me sigo preocupando por ti y no quiero que te hagan daño ni que se cumplan tus miedos. Cuídate mucho. Tu familia te quiere y necesita de tu alegría. Sabes que nunca vas a estar sola, y que para mí todas las pinky promesas siguen en mi mente.</p>
+        <p>Si algún día necesitas algo, por mínimo que sea, sabes que siempre vas a contar conmigo. Sé que la última persona en la que vas a pensar es en mí, pero por si acaso, recuerda: la vida da muchas vueltas.</p>
+        <p>Así como a veces pensamos que ya no queremos existir, al final de la tormenta llega la calma, y puedes mirar con claridad hacia el presente y el futuro, reenfocarte en tus metas.</p>
+        <p>Este año inició de una forma hermosa, pero a la mitad la vida dijo: "No, estás recibiendo mucho, no te mereces ni mierda".</p>
+        <p>Adiós a lo más preciado que quería tener. Adiós a la persona con la que compartía mi vida. Adiós a la beca. Adiós a mi forma de ser.</p>
+        <p>Te das cuenta de quién se queda y quién se va en el mierdero de vida por el que pasas; de la gente que habla a tus espaldas y de los doble cara.</p>
+        <p>Pero bueno, que se acabe este año rápido.</p>
+        <p>Espero que para ti haya sido un bonito año, que lo termines con amor, alegría y logres aprobar cada una de tus materias, rodeada de las personas que amas y que te aman.</p>
+        <p>Me despido de ti y te suelto, porque ya es hora.<br>Porque llegaste cuando no quería nada, y te vas cuando lo quería todo.<br>Porque entendí que mereces seguir con tu vida sin interrupciones, y porque ya no es necesaria mi presencia en ella.</p>
+        <p><strong>Con amor,<br>La persona que en estos momentos no sabe qué significó para ti.</strong></p>
+        
+        <div class="separador"></div>
+
+        <div class="multimedia-section">
+            <div class="cancion-item">
+                <h3>Si Me Ves Llorar</h3>
+                <audio controls>
+                    <source src="fotos/nikole/Audio/Si Me Ves Llorar, David Pabón -  Video Letra.mp4" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <div class="cancion-item">
+                <h3>Besos Usados</h3>
+                <audio controls>
+                    <source src="fotos/nikole/Audio/Besos Usados.mp4" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="multimedia-section">
+            <div class="video-item">
+                <video controls>
+                    <source src="fotos/nikole/videoss/6.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+            
+            <div class="video-item">
+                <video controls>
+                    <source src="fotos/nikole/videoss/7.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+            
+            <div class="video-item">
+                <video controls>
+                    <source src="fotos/nikole/videoss/8.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+        
+        <a href="paginaPrincipal.html" class="volver">Volver</a>
+    </div>
+</body>
+</html>
